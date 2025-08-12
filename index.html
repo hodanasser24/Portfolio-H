@@ -1,107 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hoda Nasser | Portfolio (Slides)</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Hoda Nasser — Portfolio (Slides)</title>
 <style>
-  :root { --bg:#111; --fg:#fff; --accent:#c7a27b; --accent2:#8b5e34; }
-  * { box-sizing: border-box; margin:0; padding:0; }
-  body { background: var(--bg); color: var(--fg); font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
-  .wrap { display:flex; flex-direction:column; min-height:100vh; }
-  header, footer { padding:10px 14px; background:#00000066; }
-  header h1 { font-size:14px; font-weight:700; letter-spacing:.3px; }
-  .stage { flex:1; display:flex; align-items:center; justify-content:center; padding:10px; }
-  .slide { width:min(1180px, 96vw); aspect-ratio:16/9; background:#222; border-radius:12px; overflow:hidden; box-shadow: 0 10px 40px #000; display:flex; align-items:center; justify-content:center; }
-  .slide img { width:100%; height:100%; object-fit:contain; }
-  .controls { display:flex; gap:10px; justify-content:center; padding:12px; position:sticky; bottom:0; background:#00000066; backdrop-filter: blur(4px); }
-  button { border:1px solid var(--accent); background:transparent; color:var(--fg); padding:10px 14px; border-radius:10px; font-size:14px; cursor:pointer; }
-  button:hover { background: var(--accent); color:#111; }
-  .pill { border-radius:999px; padding:8px 12px; font-size:12px; border:1px solid #ffffff33; }
-  .toolbar { position:fixed; right:14px; top:14px; display:flex; gap:8px; z-index:10; }
-  .toolbar a { border:1px solid var(--accent2); color:var(--fg); text-decoration:none; padding:8px 10px; border-radius:999px; font-size:12px; background:#00000066; }
-  .toolbar a:hover { background: var(--accent2); color:#fff; }
-  .indicator { font-size:12px; opacity:.8; margin-left:8px; }
-  .kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background:#00000080; padding:2px 6px; border-radius:6px; border:1px solid #ffffff22; font-size:12px; }
+  :root{ --bg:#111; --fg:#fff; --accent:#c7a27b; --accent2:#8b5e34; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;min-height:100vh;display:flex;flex-direction:column}
+  header, footer{padding:10px 14px;background:#00000066}
+  header h1{font-size:14px;font-weight:700;letter-spacing:.3px}
+  .indicator{font-size:12px;opacity:.8;margin-left:8px}
+  .kbd{font-family:ui-monospace,Menlo,Consolas,monospace;background:#00000080;padding:2px 6px;border-radius:6px;border:1px solid #ffffff22;font-size:12px}
+  .toolbar{position:fixed;right:14px;top:14px;display:flex;gap:8px;z-index:10}
+  .toolbar a{border:1px solid var(--accent2);color:var(--fg);text-decoration:none;padding:8px 10px;border-radius:999px;font-size:12px;background:#00000066}
+  .toolbar a:hover{background:var(--accent2)}
+  /* المسرح ياخد طول الشاشة ناقص الهيدر والفوتر */
+  .stage{flex:1;display:flex;align-items:center;justify-content:center;padding:10px;min-height:calc(100vh - 140px)}
+  .slide{width:min(1180px,96vw);height:min(66vw, calc(100vh - 180px));background:#222;border-radius:12px;overflow:hidden;box-shadow:0 10px 40px #000;display:flex;align-items:center;justify-content:center}
+  .slide img{width:100%;height:100%;object-fit:contain}
+  .controls{display:flex;gap:10px;justify-content:center;padding:12px;position:sticky;top:0;background:#00000066;backdrop-filter:blur(4px)}
+  button{border:1px solid var(--accent);background:transparent;color:var(--fg);padding:8px 14px;border-radius:10px;font-size:14px;cursor:pointer}
+  button:hover{background:var(--accent);color:#111}
+  .pill{border-radius:999px;padding:6px 10px;font-size:12px;border:1px solid #ffffff33}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <div style="display:flex; align-items:center; justify-content:space-between;">
-      <h1>Hoda Nasser — Portfolio</h1>
-      <div class="indicator">Use <span class="kbd">←</span> <span class="kbd">→</span> or click Next/Prev</div>
-    </div>
-  </header>
-
-  <div class="toolbar">
-    <a href="https://www.linkedin.com/in/hoda-nasser" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="https://github.com/hodanasser24" target="_blank" rel="noopener">GitHub</a>
-    <a href="https://drive.google.com/file/d/17ouF6wr-hpZcrUWTnN0KkiXbvFWlpgSQ/view?usp=share_link" target="_blank" rel="noopener">Download CV</a>
-    <a href="https://drive.google.com/file/d/1e2f1HZdsQurwAC5ZyWCqtB1ys5DWu6qE/view?usp=sharing" target="_blank" rel="noopener">Project Video</a>
+<header>
+  <div style="display:flex;align-items:center;justify-content:space-between;">
+    <h1>Hoda Nasser — Portfolio</h1>
+    <div class="indicator">Use <span class="kbd">←</span> <span class="kbd">→</span> or click Next/Prev</div>
   </div>
+</header>
 
-  <main class="stage">
-    <div class="slide">
-      <img id="slide-img" src="slides/slide-01.png" alt="Portfolio slide">
-    </div>
-  </main>
-
-  <div class="controls">
-    <button id="prevBtn">◀ Prev</button>
-    <span class="pill" id="counter">1 / 11</span>
-    <button id="nextBtn">Next ▶</button>
-  </div>
-
-  <footer>
-    <div style="display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;">
-      <div>© Hoda Nasser</div>
-      <div style="display:flex; gap:12px;">
-        <a class="pill" href="mailto:hoda.nasser2006@gmail.com">Email</a>
-        <a class="pill" href="tel:+201033777336">Call</a>
-      </div>
-    </div>
-  </footer>
+<div class="toolbar">
+  <a href="https://www.linkedin.com/in/hoda-nasser" target="_blank" rel="noopener">LinkedIn</a>
+  <a href="https://github.com/hodanasser24" target="_blank" rel="noopener">GitHub</a>
+  <a href="https://drive.google.com/file/d/17ouF6wr-hpZcrUWTnN0KkiXbvFWlpgSQ/view?usp=share_link" target="_blank" rel="noopener">Download CV</a>
+  <a href="https://drive.google.com/file/d/1e2f1HZdsQurwAC5ZyWCqtB1ys5DWu6qE/view?usp=sharing" target="_blank" rel="noopener">Project Video</a>
 </div>
 
+<main class="stage">
+  <div class="slide">
+    <img id="slide-img" alt="Portfolio slide">
+  </div>
+</main>
+
+<div class="controls">
+  <button id="prevBtn">◀ Prev</button>
+  <span class="pill" id="counter">–</span>
+  <button id="nextBtn">Next ▶</button>
+</div>
+
+<footer>
+  <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;">
+    <div>© Hoda Nasser</div>
+    <div style="display:flex;gap:12px;">
+      <a class="pill" href="mailto:hoda.nasser2006@gmail.com">Email</a>
+      <a class="pill" href="tel:+201033777336">Call</a>
+    </div>
+  </div>
+</footer>
+
 <script>
-const slides = [
-  "slide-01.png",
-  "slide-02.png",
-  "slide-03.png",
-  "slide-04.png",
-  "slide-05.png",
-  "slide-06.png",
-  "slide-07.png",
-  "slide-08.png",
-  "slide-09.png",
-  "slide-10.png",
-  "slide-11.png"
-];
+  /* مهم: الصور محطوطة جنب index.html زي ما ظاهر عندك في الشمال */
+  const slides = [
+    "slide-01.png","slide-02.png","slide-03.png","slide-04.png","slide-05.png",
+    "slide-06.png","slide-07.png","slide-08.png","slide-09.png","slide-10.png","slide-11.png"
+  ];
 
-let currentSlide = 0;
-const stage = document.querySelector('.stage') || document.createElement('div');
-stage.className = 'stage';
-document.body.appendChild(stage);
+  let i = 0;
+  const img = document.getElementById('slide-img');
+  const counter = document.getElementById('counter');
 
-function renderSlide() {
-  stage.innerHTML = `<div class="slide"><img src="${slides[currentSlide]}" alt="Slide ${currentSlide + 1}"></div>`;
-}
-function nextSlide() {
-  currentSlide = (currentSlide + 1) % slides.length;
-  renderSlide();
-}
-function prevSlide() {
-  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-  renderSlide();
-}
+  function show(n){
+    if(n<0) n = slides.length-1;
+    if(n>=slides.length) n = 0;
+    i = n;
+    img.src = slides[i];
+    counter.textContent = (i+1) + " / " + slides.length;
+  }
+  document.getElementById('prevBtn').onclick = () => show(i-1);
+  document.getElementById('nextBtn').onclick = () => show(i+1);
+  window.addEventListener('keydown', (e) => {
+    if(e.key === 'ArrowLeft') show(i-1);
+    if(e.key === 'ArrowRight') show(i+1);
+  });
 
-document.addEventListener('keydown', e => {
-  if (e.key === 'ArrowRight') nextSlide();
-  if (e.key === 'ArrowLeft') prevSlide();
-});
-
-renderSlide();
+  // أول تحميل
+  show(0);
 </script>
 </body>
 </html>
