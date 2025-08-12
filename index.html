@@ -65,23 +65,43 @@
 </div>
 
 <script>
-  const slides = ["slides/slide-01.png", "slides/slide-02.png", "slides/slide-03.png", "slides/slide-04.png", "slides/slide-05.png", "slides/slide-06.png", "slides/slide-07.png", "slides/slide-08.png", "slides/slide-09.png", "slides/slide-10.png", "slides/slide-11.png"];
-  let i = 0;
-  const img = document.getElementById('slide-img');
-  const counter = document.getElementById('counter');
-  function show(n) {
-     if (n < 0) n = slides.length - 1;
-     if (n >= slides.length) n = 0;
-     i = n;
-     img.src = slides[i];
-     counter.textContent = (i+1) + " / " + slides.length;
-  }
-  document.getElementById('prevBtn').onclick = () => show(i-1);
-  document.getElementById('nextBtn').onclick = () => show(i+1);
-  window.addEventListener('keydown', (e) => {
-     if (e.key === 'ArrowLeft') show(i-1);
-     if (e.key === 'ArrowRight') show(i+1);
-  });
+const slides = [
+  "slide-01.png",
+  "slide-02.png",
+  "slide-03.png",
+  "slide-04.png",
+  "slide-05.png",
+  "slide-06.png",
+  "slide-07.png",
+  "slide-08.png",
+  "slide-09.png",
+  "slide-10.png",
+  "slide-11.png"
+];
+
+let currentSlide = 0;
+const stage = document.querySelector('.stage') || document.createElement('div');
+stage.className = 'stage';
+document.body.appendChild(stage);
+
+function renderSlide() {
+  stage.innerHTML = `<div class="slide"><img src="${slides[currentSlide]}" alt="Slide ${currentSlide + 1}"></div>`;
+}
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % slides.length;
+  renderSlide();
+}
+function prevSlide() {
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  renderSlide();
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight') nextSlide();
+  if (e.key === 'ArrowLeft') prevSlide();
+});
+
+renderSlide();
 </script>
 </body>
 </html>
